@@ -1,0 +1,23 @@
+
+ create database electricity_bill;
+ use electricity_bill;
+1.  create table electricity_connection_type(id int(11) primary key,connection_name varchar(20) not null);
+2.  create table slab(id int(11) primary key,connection_type_id int(11) not null,from_unit int(11) not null,to_unit int(11) not null,rate double not null,constraint connection_type_id_fk foreign key(connection_type_id) references electricity_connection_type(id));
+3.  create table building_type(id int(11) primary key,name varchar(100) not null,connection_type_id int(11) not null,constraint connection_type_id foreign key(connection_type_id) references electricity_connection_type(id));
+4.  create table building(id int(11) primary key,owner_name varchar(100) not null,address varchar(100) not null,building_type_id int(11) not null,contact_number varchar(100) not null,email_address varchar(100) null,constraint building_type_id foreign key(building_type_id) references building_type(id));
+5.  alter table building rename column owner_name to building_owner_name;
+6.  alter table building modify address varchar(225);
+7.  constraint check connection name check(connection_name in('commercial','home');
+8.  rename table building to building_details;
+9.  drop table slab;
+10. drop table building_details;
+11. insert into electricity_connection_type values(1,'Rani'),(2,'sita');
+12. insert into slab values(1,100,0,5,180),(2,101,3,7,200),(3,102,4,9,230);
+13. insert into building_type values(1,'xyz',100),(2,'pqr',101),(3,'tuv',102),(4,'abc',103),(5,'def'104);
+14. update table slab set from_unit=1 where id=1;
+15. update table building_type set name='mall' where id=1;
+16. delete from slab;
+17. delete from building_type;
+
+
+
