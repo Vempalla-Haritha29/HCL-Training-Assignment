@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Dec-2020, 9:31:53 pm by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="org.hcl.entities.Employee" table="EMPLOYEE">
+		<id name="eno" type="int">
+			<column name="ENO" />
+			<generator class="assigned" />
+		</id>
+		<property name="name" column="NAME" />
+
+		<property name="address" column="ADDRESS" />
+	</class>
+</hibernate-mapping>
